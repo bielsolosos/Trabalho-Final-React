@@ -9,6 +9,8 @@ function App() {
 
   return (
     <>
+    <img class='teste' src="/src/Images/Group_1.png" alt="" />
+    <h1>Bear beer</h1>
     <CaixaTexto titulo={"Agora podemos reutilizar essa componente estilizada no código inteiro!"} />
     </>
   )
