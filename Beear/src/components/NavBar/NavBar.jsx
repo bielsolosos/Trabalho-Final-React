@@ -1,12 +1,12 @@
 import React from "react";
 import beearBeerImg from "./BeearBeer.png";
 // import NavbarStyle from "NavbarStyle";
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { Botao } from "../Botao/Botao";
 
 function Navbar() {
 
-    let navegar = useNavigate();
+    let navegar = useNavigate(); // lembre de dar o comando "npm install react-router-dom" para não dar erro
 
     const mudarRotaHome = () =>{
         let rota = 'novaRota'; // colocar a rota da home
