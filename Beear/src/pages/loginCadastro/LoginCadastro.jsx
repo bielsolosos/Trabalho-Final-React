@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getALLClientes } from '../../services/api';
 import './LoginCadastro.css';
-import { Login } from '../../components/Login(Mock)/LoginApi';
+
+export function LoginCadastro(){
 
   return (
     <main>
@@ -63,5 +64,3 @@ import { Login } from '../../components/Login(Mock)/LoginApi';
     </main>
   );
 };
-
-export default LoginCadastro;
