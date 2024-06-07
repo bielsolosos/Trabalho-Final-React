@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getALLClientes } from '../../services/api';
+import Navbar from '../../components/NavBar/NavBar';
 import './LoginCadastro.css';
 
 export function LoginCadastro(){
@@ -37,6 +38,8 @@ export function LoginCadastro(){
   };
 
   return (
+    <>
+    <Navbar/>
     <main>
       <div className={`logcontainer ${!isLoginForm ? 'move' : ''}`} id="logcontainer">
         <div className="formcontainer">
@@ -94,5 +97,6 @@ export function LoginCadastro(){
         </div>
       </div>
     </main>
+    </>
   );
 };

@@ -1,8 +1,10 @@
-*{margin: 0; padding: 0;}
-
-.app{
+.divFullScrean{
   width: 100vw;
   height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: lightblue;
 }
 
 .navbar{
@@ -10,7 +12,7 @@
     min-width: none;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     background: chocolate;
     padding: 10px 16px;
     margin-bottom: 16px;
@@ -36,9 +38,9 @@
     color: white;
 }
 
-.navbar-img img {
-  max-width: 50px;  
-  max-height: 50px; 
+.navbar-img{
+  max-width: 30px;  
+  max-height: 30px; 
   width: auto;
   height: auto;
 }
