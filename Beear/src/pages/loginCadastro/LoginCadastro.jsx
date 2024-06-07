@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getALLClientes } from '../../services/api';
 import './LoginCadastro.css';
 
-const LoginCadastro = () => {
+export function LoginCadastro(){
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [usuarios, setUsuarios] = useState([]);
   const [login, setLogin] = useState('');
@@ -96,5 +96,3 @@ const LoginCadastro = () => {
     </main>
   );
 };
-
-export default LoginCadastro

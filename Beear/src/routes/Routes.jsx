@@ -1,6 +1,6 @@
 import { CarrinhoDeCompras } from "../pages/CarrinhoDeCompras/CarrinhoDeCompras";
-import { LoginCadastro } from "../pages/loginCadastro/LoginCadastro";
 import { Route, Routes } from "react-router-dom";
+import { LoginCadastro } from "../pages/loginCadastro/LoginCadastro";
 
 
 export function Rotas() {
