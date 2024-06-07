@@ -1,4 +1,3 @@
-import React from "react";
 import beearBeerImg from "./BeearBeer.png";
 import styles from "./NavbarStyle.module.css";
 import { useNavigate } from "react-router-dom";
