@@ -1,50 +1,41 @@
 import React, { useState, useEffect } from "react"
+import { Botao } from "../../components/Botao/Botao";
+import {getAllCervas} from  '../../services/api';
 
-{/* Lembrar de importar de onde virá a api de cervejas como no modelo abaixo*/} 
-{/* import {getAllCervas} from  '../../services/api'*/} 
+export const CarrinhoDeCompras = ()=> {    
 
-export const CarrinhoDeCompras = ()=> {
+    //const { adicionarItens, removerItens, limparCarrinho, calcularValorTotal } =
+    //useContext(cartContext);
 
-    const [cervejas, setCervas] = useState([]);
-    const { adicionarItens, removerItens, limparCarrinho, calcularValorTotal } =
-    useContext(cartContext);
+     
+    const [cervejas, setCervejas] = useState([]);
+    const [error, setError] = useState(null);
 
+    //Da o Get fazendo um tratamento de erro foram 3 horas de revisão de JS pra sair isso
+    const fetchCervejas = async () => {
+        try {
+            const response = await getAllCervas();
+            setCervejas(response.data);
+        } catch (error) {
+            setError(error);
+        }
+    };
 
-    {/* lembrar de trocar "getAllCervas" pelo que estiver no import*/} 
-    function obterCervejas(){
-        getAllCervas().then((beer)=>{ 
-            setCervas(beer.data.results)
-        }).catch((erro) => {
-            console.log(erro)
-        });
-    }
-
-    useEffect(()=>{
-        obterCervejas();
-     },[]);
+    // Atualiza toda vez q a gente seta um novo bglh
+    useEffect(() => {
+        fetchCervejas();
+    }, []);
 
     
 
     return(
         <>
         <h1>Lista de Cervejas da Beear Beer!</h1>
-         <ul>
+         <ul style={{color: "black"}}>
             {cervejas.map(cerva=>(
-                <li key={cerva.id}>{cerva.name} {cerva.preco}</li>
+                <li key={cerva.id}>{cerva.nome}</li>
             ))}
 
-            <li>
-                <p>{cervejas.name}</p>
-
-                <Botao title={"botão para adicionar produto"} 
-                valor={"clique aqui"} 
-                onClick={adicionarItens}>Adicionar ao carrinho</Botao>
-
-
-                <Botao title={"botão para remover produto"} 
-                valor={"clique aqui"} 
-                onClick={removerItens}>Remover do carrinho</Botao>
-            </li>
          </ul>
 
 
