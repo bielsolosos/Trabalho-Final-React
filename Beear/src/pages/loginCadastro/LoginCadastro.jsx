@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getALLClientes } from '../../services/api';
 import './LoginCadastro.css';
 
+<<<<<<< HEAD
 const LoginCadastro = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [usuarios, setUsuarios] = useState([]);
@@ -35,6 +36,9 @@ const LoginCadastro = () => {
       alert('Usuário ou senha incorretos');
     }
   };
+=======
+export function LoginCadastro(){
+>>>>>>> f90962194efe5e5a43eff4756137e678b2ae9fcd
 
   return (
     <main>
@@ -96,5 +100,3 @@ const LoginCadastro = () => {
     </main>
   );
 };
-
-export default LoginCadastro;
