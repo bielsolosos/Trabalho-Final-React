@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 {/* Lembrar de importar de onde virá a api de cervejas como no modelo abaixo*/} 
 {/* import {getAllCervas} from  '../../services/api'*/} 
@@ -6,9 +6,13 @@ import React, { useState } from "react"
 export const CarrinhoDeCompras = ()=> {
 
     const [cervejas, setCervas] = useState([]);
+    const { adicionarItens, removerItens, limparCarrinho, calcularValorTotal } =
+    useContext(cartContext);
 
+
+    {/* lembrar de trocar "getAllCervas" pelo que estiver no import*/} 
     function obterCervejas(){
-        getAllCervas().then((beer)=>{
+        getAllCervas().then((beer)=>{ 
             setCervas(beer.data.results)
         }).catch((erro) => {
             console.log(erro)
@@ -19,12 +23,14 @@ export const CarrinhoDeCompras = ()=> {
         obterCervejas();
      },[]);
 
+    
+
     return(
         <>
-        <h1>Lista de Cervejas da Bear Beer!</h1>
+        <h1>Lista de Cervejas da Beear Beer!</h1>
          <ul>
             {cervejas.map(cerva=>(
-                <li key={cerva.index}>{cerva.name}</li>
+                <li key={cerva.id}>{cerva.name} {cerva.preco}</li>
             ))}
 
             <li>
@@ -32,11 +38,12 @@ export const CarrinhoDeCompras = ()=> {
 
                 <Botao title={"botão para adicionar produto"} 
                 valor={"clique aqui"} 
-                onClick={contar}>Adicionar ao carrinho</Botao>
+                onClick={adicionarItens}>Adicionar ao carrinho</Botao>
+
 
                 <Botao title={"botão para remover produto"} 
                 valor={"clique aqui"} 
-                onClick={contar}>Remover do carrinho</Botao>
+                onClick={removerItens}>Remover do carrinho</Botao>
             </li>
          </ul>
 
