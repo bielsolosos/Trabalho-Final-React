@@ -1,7 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { getALLClientes } from '../../services/api';
 import './LoginCadastro.css';
-import { Login } from '../../components/Login(Mock)/LoginApi';
+
+const LoginCadastro = () => {
+  const [isLoginForm, setIsLoginForm] = useState(true);
+  const [usuarios, setUsuarios] = useState([]);
+  const [login, setLogin] = useState('');
+  const [senha, setSenha] = useState('');
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await getALLClientes();
+        setUsuarios(response.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchUsuarios();
+  }, []);
+
+  const toggleForm = () => {
+    setIsLoginForm(!isLoginForm);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const user = usuarios.find(u => u.nome === login && u.senha === senha);
+    if (user) {
+      alert('Login bem-sucedido!');
+      window.location.href = '../Perfil.html';
+    } else {
+      alert('Usuário ou senha incorretos');
+    }
+  };
 
   return (
     <main>
