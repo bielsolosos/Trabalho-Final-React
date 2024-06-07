@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { CaixaTexto } from './components/CaixaDeTextos/CaixaTexto'
-import { Botao } from './components/Botao/Botao'
 import './App.css'
-import { CarrinhoDeCompras } from './pages/CarrinhoDeCompras/CarrinhoDeCompras'
 import Navbar from './components/NavBar/NavBar'
+import { Login } from './components/Login(Mock)/LoginApi'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +9,7 @@ function App() {
   return (
     <div className='divFullScrean'>
     <Navbar/>
-    <CarrinhoDeCompras/>
+    <Login/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ export function Login(){
     const fetchUsuarios = async () => {
         try {
             const response = await getALLClientes();
-            setCervejas(response.data);
+            setUsuarios(response.data);
         } catch (error) {
             setError(error);
         }
