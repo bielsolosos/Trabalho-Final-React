@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Botao } from "../../components/Botao/Botao";
 import {getAllCervas} from  '../../services/api';
+import { CardProdutos } from "../../components/Card/CardProdutos";
+import { Lista } from "../../components/Card/styleCard";
 
 export const CarrinhoDeCompras = ()=> {    
 
@@ -30,13 +32,18 @@ export const CarrinhoDeCompras = ()=> {
 
     return(
         <>
+        <br />
+        <br />
+        <br />
+        
+
         <h1>Lista de Cervejas da Beear Beer!</h1>
-         <ul style={{color: "black"}}>
+         <Lista>
             {cervejas.map(cerva=>(
-                <li key={cerva.id}>{cerva.nome}</li>
+                <li key={cerva.id}><CardProdutos descricao={cerva.descricao} nome={cerva.nome} valor={`${cerva.precoUnitario} R$`}/></li>
             ))}
 
-         </ul>
+         </Lista>
 
 
         </>
