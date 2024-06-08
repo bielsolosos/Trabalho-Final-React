@@ -1,6 +1,6 @@
 import React from "react";
 import beearBeerImg from "./BeearBeer.png";
-// import styles from "./NavbarStyle.module.css";
+import styles from "./NavbarStyle.module.css";
 import { useNavigate } from "react-router-dom";
 import { Botao } from "../Botao/Botao";
 
@@ -25,13 +25,13 @@ function Navbar() {
 
 
     return(
-        <div className="navbar">
-                <div className="navbar-img"><a href="#"><img src={beearBeerImg} alt="Imagem" /></a></div>
-                <ul className="navbar-menu">
+        <div className={styles.navbar}>
+                <div className={styles.navbarImg}><a href="#"><img src={beearBeerImg} alt="Imagem" /></a></div>
+                <div className={styles.navbarMenu}>
                     <Botao title={'cópia não comédia'} onclick={mudarRotaHome} valor={'home'}>home</Botao>
                     <Botao title={'cópia não comédia'} onclick={mudarRotaCarrinho} valor={'carrinho'}>carrinho</Botao>
                     <Botao title={'cópia não comédia'} onclick={mudarRotaSobre} valor={'sobre'}>sobre</Botao>
-                </ul>
+                </div>
         </div>
     )
 }

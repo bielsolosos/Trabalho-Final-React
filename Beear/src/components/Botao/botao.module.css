@@ -1,4 +1,15 @@
 .botao{
     background-color: #932900;
-    color: #fdc36c;   
+    border: solid #691f01 3px;
+    color: white;   
+}
+
+.botao:hover{
+    background-color: #bd6745;
+    border: solid #691f01 3px;
+}
+
+.botao:active{
+    background-color: #361001;
+    border: solid #691f01 3px;
 }
