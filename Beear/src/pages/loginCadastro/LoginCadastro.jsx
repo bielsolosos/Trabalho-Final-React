@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getALLClientes } from '../../services/api';
+import { getALLClientes } from '../../services/clientes';
 import './LoginCadastro.css';
 
 export function LoginCadastro(){

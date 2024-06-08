@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Botao } from "../../components/Botao/Botao";
-import {getAllCervas} from  '../../services/api';
+import {getAllCervas} from  '../../services/produtos';
 import { CardProdutos } from "../../components/Card/CardProdutos";
 import { Lista } from "../../components/Card/styleCard";
 
