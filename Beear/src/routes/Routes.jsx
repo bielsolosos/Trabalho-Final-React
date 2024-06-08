@@ -12,7 +12,6 @@ export function Rotas() {
         <Route path="/" element={<PaginaPrincipal/>} /> 
         <Route path="/login" element={<LoginCadastro/>} />  
         <Route path="/carrinhodecompras" element={<CarrinhoDeCompras/>} />
-        <Route path="/sobre" element={<Sobre/>} />
       </Routes>
     );
   }
