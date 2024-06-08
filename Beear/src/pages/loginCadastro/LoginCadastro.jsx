@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getALLClientes } from '../../services/api';
-import Navbar from '../../components/NavBar/NavBar';
 import './LoginCadastro.css';
 
 export function LoginCadastro(){
@@ -26,24 +25,24 @@ export function LoginCadastro(){
     setIsLoginForm(!isLoginForm);
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const tentaLogar = () => {
     const user = usuarios.find(u => u.nome === login && u.senha === senha);
     if (user) {
-      alert('Login bem-sucedido!');
-      window.location.href = '../Perfil.html';
+        alert('Login bem-sucedido!');
     } else {
-      alert('Usuário ou senha incorretos');
+        console.log('Usuário ou senha incorretos');
     }
-  };
+};
 
   return (
     <>
-    <Navbar/>
+    Nav
     <main>
       <div className={`logcontainer ${!isLoginForm ? 'move' : ''}`} id="logcontainer">
         <div className="formcontainer">
-          <form className={`form form-login ${isLoginForm ? '' : 'hidden'}`} onSubmit={handleLogin}>
+          <form className={`form form-login ${isLoginForm ? '' : 'hidden'}`} onSubmit={(event)=>{
+                event.preventDefault();
+            }} >
             <h2 className="title">Entrar</h2>
             <p className="text">utilize sua conta</p>
             <div className="inputcontainer">
@@ -52,16 +51,17 @@ export function LoginCadastro(){
                 placeholder="Digite seu nome"
                 value={login}
                 onChange={(e) => setLogin(e.target.value)}
+                style={{backgroundColor: '#fab45a',color: 'white' }}
               />
               <input
                 type="password"
                 placeholder="Digite sua senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
+                style={{backgroundColor: '#fab45a',color: 'white'}}
               />
             </div>
-            <a href="#" className="link">Esqueceu a senha?</a>
-            <button type="submit" className="button">Entrar</button>
+            <button type="submit" className="button" onClick={tentaLogar}>Entrar</button>
             <p className="mobile-text">
               Não tem conta?
               <a href="#" id="open-register-mobile" onClick={toggleForm}>Registre-se</a>
@@ -71,11 +71,10 @@ export function LoginCadastro(){
             <h2 className="title">Criar Conta</h2>
             <p className="text">cadastre seu email</p>
             <div className="inputcontainer">
-              <input type="text" placeholder="Digite seu nome" />
-              <input type="email" placeholder="Digite seu email" />
-              <input type="password" placeholder="Digite sua senha" />
+              <input type="text" placeholder="Digite seu nome" style={{backgroundColor: '#fab45a',color: 'white'}}/>
+              <input type="email" placeholder="Digite seu email" style={{backgroundColor: '#fab45a',color: 'white'}} />
+              <input type="password" placeholder="Digite sua senha" style={{backgroundColor: '#fab45a',color: 'white'}}/>
             </div>
-            <a href="#" className="link">Esqueceu a senha?</a>
             <button type="submit" className="button">Cadastrar</button>
             <p className="mobile-text">
               Já tem conta?

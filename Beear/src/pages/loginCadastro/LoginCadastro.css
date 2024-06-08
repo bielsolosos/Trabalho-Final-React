@@ -56,11 +56,11 @@
       display: flex;
   }
   #logar{
-    background-color: chocolate;
+    background-color: #fab45a;
   }
   
   #cadastrar{
-    background-color: chocolate;
+    background-color: #fab45a;
   }
   .form{
       height: 100%;
@@ -81,7 +81,7 @@
       color: var(--text-color-dark);
   }
   :root{
-      --primary-color : chocolate;
+      --primary-color : #fab45a;
       --secundary-color : #fff;
       --text-color-dark: #2c2c2c;
       --text-color-light: #fff;
