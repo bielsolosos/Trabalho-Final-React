@@ -1,0 +1,23 @@
+.sobreNos-container {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Centraliza todo o conteúdo */
+}
+
+.sobreNos-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.sobreNos-container h2 {
+  font-size: 2em;
+  margin-top: 1.5em;
+}
+
+.sobreNos-container p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
