@@ -1,38 +1,40 @@
-//Hora de fazer o temido Carrinho!!!
-import { useContext } from "react";
-import { cartContext } from "../../context/carrinhoContext";
-import "./Carrinho.module.css";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/carrinhoContext";
+import styles from "./Carrinho.module.css";
 
 export function Carrinho() {
-  const {cartItems, adicionarItens, removerItens, limparCarrinho, calcularValorTotal } =
-    useContext(cartContext);
+  const { cartItens, adicionarItens, removerItens, limparCarrinho, valorTotal } =
+    useContext(CartContext);
 
-    useEffect(() => {
-        calcularValorTotal();
-      }, [cartItems]);
-    
-    return (
-        <div className="cart">
-          <h2>Seu Carrinho</h2>
-          {cartItems.length === 0 ? (
-            <p>Seu carrinho está vazio</p>
-          ) : (
-            <div className="cart-items">
-              {cartItems.map((item) => (
-                <div key={item.id} className="cart-item">
-                  <span>{item.name}</span>
-                  <span>{item.quantity}</span>
-                  <span>{item.unitPrice}</span>
-                  <button onClick={() => removerItens(item.id)}>Remover</button>
-                </div>
-              ))}
+  return (
+    <div className={styles.carrinhoContainer}>
+      <h1 className={styles.carrinhoTitulo}>Carrinho</h1>
+      <div className={styles.carrinhoItens}>
+        {cartItens.length === 0 ? (
+          <p className={styles.carrinhoVazio}>Seu carrinho está vazio.</p>
+        ) : (
+          cartItens.map((item) => (
+            <div key={item.id} className={styles.carrinhoItem}>
+              <div className={styles.itemDetalhes}>
+                <h2 className={styles.itemNome}>{item.nome}</h2>
+                <p className={styles.itemDescricao}>{item.descricao}</p>
+                <p className={styles.itemPreco}>Preço: R$ {item.valorUnitario}</p>
+                
+              </div>
+              <div className={styles.itemAcoes}>
+                <button onClick={() => adicionarItens(item)} className={styles.botaoAdicionar}>+</button>
+                <button onClick={() => removerItens(item.id)} className={styles.botaoRemover}>-</button>
+              </div>
             </div>
-          )}
-          <div className="cart-total">
-            <span>Total: </span>
-            <span>{calcularValorTotal}</span>
-          </div>
-          <button onClick={limparCarrinho}>Limpar Carrinho</button>
-        </div>
-      );
+          ))
+        )}
+      </div>
+      <div className={styles.carrinhoTotal}>
+        <h2>Total: R$ {valorTotal}</h2>
+      </div>
+      <div className={styles.carrinhoAcoes}>
+        <button onClick={limparCarrinho} className={styles.botaoLimpar}>Limpar Carrinho</button>
+      </div>
+    </div>
+  );
 }

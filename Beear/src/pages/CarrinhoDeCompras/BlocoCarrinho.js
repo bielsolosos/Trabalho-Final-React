@@ -8,6 +8,6 @@ export const Carrinhos = styled.div`
 
 export const Bloco = styled.div`
     display: flex;       
-  flex-direction: row;   
-  gap: 10px;
+   flex-direction: row;   
+   gap: 10px;
 `
