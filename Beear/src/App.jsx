@@ -5,7 +5,7 @@ import {LoginCadastro} from './pages/loginCadastro/LoginCadastro'
 import {Rotas} from './routes/Routes'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const usuario = () => {localStorage('usuario','')};
 
   return (
     <>

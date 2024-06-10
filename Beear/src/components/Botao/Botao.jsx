@@ -1,6 +1,6 @@
 import styles from "./botao.module.css";
 
-export function Botao({ valor, onclick, title }){
+export function Botao({ valor, onclick, title, subValor }){
     return(
         <>
             <button
@@ -9,6 +9,7 @@ export function Botao({ valor, onclick, title }){
                 className={styles.botao}
             >
                 {valor}
+                <strong><p>{subValor}</p></strong>
             </button>
         </>
     )

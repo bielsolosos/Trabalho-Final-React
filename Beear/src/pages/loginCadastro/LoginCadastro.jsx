@@ -29,7 +29,11 @@ export function LoginCadastro(){
     const user = usuarios.find(u => u.nome === login && u.senha === senha);
     if (user) {
         alert('Login bem-sucedido!');
-    } else {
+        localStorage.setItem('usuario', login)
+        window.location.reload();
+
+    } 
+    else {
         console.log('Usuário ou senha incorretos');
     }
 };
