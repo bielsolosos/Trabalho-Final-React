@@ -1,50 +1,61 @@
-import { useState } from "react";
-import { createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
-const cartContext = createContext();
+const CartContext = createContext();
 
-const CartProvider = (props) => {
+const CartProvider = ({ children }) => {
   const [cartItens, setCartItens] = useState([]);
   const [valorTotal, setValorTotal] = useState(0);
 
-  function adicionarItens(produto) {
-    !cartItens.includes(produto) && setCartItens([...cartItens, produto]);
-  }
-
-  function removerItens(id) {
-    for (let i = 0; i < cartItens.length; i++) {
-      if (cartItens[i].id === id) {
-        cartItens.splice(i, 1);
+  const adicionarItens = (produto) => {
+    setCartItens((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === produto.id);
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item
+        );
+      } else {
+        return [...prevItems, { ...produto, quantidade: 1 }];
       }
-    }
-    setCartItens([...cartItens]);
-  }
+    });
+  };
 
-  function limparCarrinho() {
+  const removerItens = (id) => {
+    setCartItens((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantidade: item.quantidade - 1 } : item
+      ).filter((item) => item.quantidade > 0)
+    );
+  };
+
+  const limparCarrinho = () => {
     setCartItens([]);
-  }
+  };
 
-  function calcularValorTotal() {
+  const calcularValorTotal = () => {
     let total = 0;
-    valor.forEach((item) => {
+    cartItens.forEach((item) => {
       total += item.quantidade * item.valorUnitario;
     });
     setValorTotal(total);
-  }
+  };
+
+  useEffect(() => {
+    calcularValorTotal();
+  }, [cartItens]);
 
   return (
-    <cartContext.Provider
+    <CartContext.Provider
       value={{
         cartItens,
         adicionarItens,
         removerItens,
         limparCarrinho,
-        calcularValorTotal,
+        valorTotal,
       }}
     >
-        {props.children}
-    </cartContext.Provider>
+      {children}
+    </CartContext.Provider>
   );
 };
 
-export {cartContext, CartProvider}
+export { CartContext, CartProvider };

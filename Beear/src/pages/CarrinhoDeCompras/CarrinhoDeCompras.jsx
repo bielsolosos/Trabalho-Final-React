@@ -3,10 +3,9 @@ import {getAllCervas} from  '../../services/produtos';
 import { CardProdutos } from "../../components/Card/CardProdutos";
 import { Lista } from "../../components/Card/styleCard";
 import { Bloco } from "./BlocoCarrinho";
-import Carrinho  from "../../components/Carrinho/Carrinho";
-import { CartProvider } from "../../context/carrinhoContext";
+import {Carrinho}  from "../../components/Carrinho/Carrinho";
 
-export const CarrinhoDeCompras = ()=> {    
+export function CarrinhoDeCompras(){    
 
     //const { adicionarItens, removerItens, limparCarrinho, calcularValorTotal } =
     //useContext(cartContext);
@@ -45,6 +44,7 @@ export const CarrinhoDeCompras = ()=> {
                 <li key={cerva.id}><CardProdutos descricao={cerva.descricao} nome={cerva.nome} valor={`${cerva.precoUnitario} R$`}/></li>
             ))}
          </Lista>
+         <Carrinho/>
          </Bloco>
 
         </>
