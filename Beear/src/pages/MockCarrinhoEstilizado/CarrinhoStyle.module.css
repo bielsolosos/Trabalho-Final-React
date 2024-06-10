@@ -1,0 +1,47 @@
+.carro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 400px;
+    margin: 10px 10px;
+    background-color: grey;
+}
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    height: 350px;
+    margin: 10px 10px;
+    background-color: whitesmoke;
+    padding: 10px 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.conteudo::-webkit-scrollbar{
+    width: 10px;
+    background-color: gainsboro;
+    border-radius: 10px;
+    align-items: start;
+}
+.conteudo::-webkit-scrollbar-thumb{
+    width: 10px;
+    border-radius: 10px;
+    background-color: chocolate;
+}
+
+
+.resultado{
+    width: 700px;
+    height: 200px;
+    margin: 10px 10px 10px 10px;
+    background-color: #fab45a;
+}
+.cont{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
