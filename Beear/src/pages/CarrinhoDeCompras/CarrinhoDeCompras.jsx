@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { Botao } from "../../components/Botao/Botao";
 import {getAllCervas} from  '../../services/produtos';
 import { CardProdutos } from "../../components/Card/CardProdutos";
 import { Lista } from "../../components/Card/styleCard";
+import { Bloco } from "./BlocoCarrinho";
+import Carrinho  from "../../components/Carrinho/Carrinho";
+import { CartProvider } from "../../context/carrinhoContext";
 
 export const CarrinhoDeCompras = ()=> {    
 
@@ -36,15 +38,14 @@ export const CarrinhoDeCompras = ()=> {
         <br />
         <br />
         
-
+        <Bloco>
         <h1>Lista de Cervejas da Beear Beer!</h1>
          <Lista>
             {cervejas.map(cerva=>(
                 <li key={cerva.id}><CardProdutos descricao={cerva.descricao} nome={cerva.nome} valor={`${cerva.precoUnitario} R$`}/></li>
             ))}
-
          </Lista>
-
+         </Bloco>
 
         </>
     )
