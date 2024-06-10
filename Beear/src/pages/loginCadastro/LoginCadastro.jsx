@@ -8,6 +8,23 @@ export function LoginCadastro(){
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
   const [error, setError] = useState(null);
+  const [cliente, setCliente] = useState({
+    nome: '',
+    telefone: '',
+    email: '',
+    cpf: '',
+    senha: '',
+  });
+  const [cep, setCep] = useState('');
+  const [mensagem, setMensagem] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCliente((prevCliente) => ({
+      ...prevCliente,
+      [name]: value,
+    }));
+  };
 
   useEffect(() => {
     const fetchUsuarios = async () => {
@@ -36,6 +53,17 @@ export function LoginCadastro(){
     else {
         console.log('Usuário ou senha incorretos');
     }
+};
+
+const tentaCriar = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await criarCliente(cliente, cep);
+    setMensagem('Cliente criado com sucesso!');
+    console.log('Resposta da API:', response);
+  } catch (error) {
+    setMensagem('Erro ao criar cliente.');
+  }
 };
 
   return (
@@ -71,15 +99,57 @@ export function LoginCadastro(){
               <a href="#" id="open-register-mobile" onClick={toggleForm}>Registre-se</a>
             </p>
           </form>
-          <form className={`form form-register ${isLoginForm ? 'hidden' : ''}`}>
+          <form className={`form form-register ${isLoginForm ? 'hidden' : ''}`} onSubmit={(event)=>{
+                event.preventDefault();
+            }} >
             <h2 className="title">Criar Conta</h2>
             <p className="text">cadastre seu email</p>
             <div className="inputcontainer">
-              <input type="text" placeholder="Digite seu nome" style={{backgroundColor: '#fab45a',color: 'white'}}/>
-              <input type="email" placeholder="Digite seu email" style={{backgroundColor: '#fab45a',color: 'white'}} />
-              <input type="password" placeholder="Digite sua senha" style={{backgroundColor: '#fab45a',color: 'white'}}/>
+            <input
+        type="text"
+        name="nome"
+        placeholder="Nome"
+        value={cliente.nome}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="telefone"
+        placeholder="Telefone"
+        value={cliente.telefone}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={cliente.email}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="cpf"
+        placeholder="CPF"
+        value={cliente.cpf}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="senha"
+        placeholder="Senha"
+        value={cliente.senha}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="cep"
+        placeholder="CEP"
+        value={cep}
+        onChange={(e) => setCep(e.target.value)}
+      />
             </div>
             <button type="submit" className="button">Cadastrar</button>
+            {mensagem && <p>{mensagem}</p>}
             <p className="mobile-text">
               Já tem conta?
               <a href="#" id="open-login-mobile" onClick={toggleForm}>Login</a>

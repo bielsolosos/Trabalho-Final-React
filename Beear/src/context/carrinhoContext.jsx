@@ -2,7 +2,7 @@ import { useState, createContext, useEffect } from "react";
 
 const CartContext = createContext();
 
-const CartProvider = ({ children }) => {
+const CartProvider = ( props ) => {
   const [cartItens, setCartItens] = useState([]);
   const [valorTotal, setValorTotal] = useState(0);
 
@@ -53,7 +53,7 @@ const CartProvider = ({ children }) => {
         valorTotal,
       }}
     >
-      {children}
+      {props}
     </CartContext.Provider>
   );
 };

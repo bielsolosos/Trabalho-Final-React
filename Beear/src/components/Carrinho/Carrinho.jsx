@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/carrinhoContext";
 import styles from "./Carrinho.module.css";
+import {getAllCervas} from  '../../services/produtos';
 
 export function Carrinho() {
   const { cartItens, adicionarItens, removerItens, limparCarrinho, valorTotal } =
     useContext(CartContext);
 
+  
+  
   return (
     <div className={styles.carrinhoContainer}>
       <h1 className={styles.carrinhoTitulo}>Carrinho</h1>
@@ -29,9 +32,11 @@ export function Carrinho() {
           ))
         )}
       </div>
+
       <div className={styles.carrinhoTotal}>
         <h2>Total: R$ {valorTotal}</h2>
       </div>
+
       <div className={styles.carrinhoAcoes}>
         <button onClick={limparCarrinho} className={styles.botaoLimpar}>Limpar Carrinho</button>
       </div>
