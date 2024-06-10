@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardProdutosEstyle = styled.div`
-  width: 300px;
+  width: 200px;
   padding: 20px;
   background-color: #fab45a;
   border: solid #f1a036 4px;
@@ -19,10 +19,10 @@ export const CardProdutosEstyle = styled.div`
 
 export const Lista = styled.ul`
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
-  margin: 15px 115px 15px 115px;
 
   li {
     margin: 10px; // Adicione margem entre os itens conforme necessário
