@@ -4,7 +4,7 @@ import styles from "./Carrinho.module.css";
 import {getAllCervas} from  '../../services/produtos';
 
 export function Carrinho() {
-  const { cartItens, adicionarItens, removerItens, limparCarrinho, valorTotal } =
+  const { cartItens, adicionarItens, removerItens, limparCarrinho,finalizarCompra, valorTotal } =
   useContext(CartContext);
   console.log(cartItens)
 
@@ -34,7 +34,10 @@ export function Carrinho() {
       </div>
 
       <div className={styles.carrinhoAcoes}>
-        <button onClick={limparCarrinho} className={styles.botaoLimpar}>Limpar Carrinho</button>
+        <div className={styles.botaoLimpar}>
+        <button onClick={finalizarCompra} className={styles.finalizarCompra}>Finalizar Compra!</button>
+        <button onClick={limparCarrinho} className={styles.limparCarrinho}>Limpar Carrinho</button>
+        </div>
       </div>
     </div>
   );

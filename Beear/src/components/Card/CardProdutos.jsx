@@ -22,7 +22,7 @@ export function CardProdutos({ nome, descricao, valor }) {
     <CardProdutosEstyle>
       <h2>{nome}</h2>
       <p>{descricao}</p>
-      <p>{valor}</p>
+      <p>{`${valor} R$`}</p>
       <Botao onclick={handleAddToCart} valor={'Adicionar ao Carrinho'} />
     </CardProdutosEstyle>
   );

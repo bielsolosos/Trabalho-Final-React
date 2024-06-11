@@ -47,7 +47,7 @@ export function LoginCadastro(){
     if (user) {
         alert('Login bem-sucedido!');
         localStorage.setItem('usuario', login)
-        getALLClientes();
+        window.location.reload();
 
     } 
     else {

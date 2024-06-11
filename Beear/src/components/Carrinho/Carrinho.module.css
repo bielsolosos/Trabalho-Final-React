@@ -72,7 +72,9 @@
 }
 
 .botaoLimpar {
-  background-color: #ff9800;
+  padding: 20px;
+  background-color: #fab45a;
+  border: solid #f1a036 4px;
   color: white;
   width: 100%;
   margin-top: 500px;
@@ -83,4 +85,26 @@
   font-size: 1.5rem;
   margin-top: 20px;
   color: #666;
+}
+
+.finalizarCompra{
+  margin-right: 40px;
+  background-color: greenyellow;
+  border: solid green 2px;
+}
+
+.finalizarCompra:hover{
+  background-color: rgb(123, 193, 18);
+  border: solid green 2px;
+}
+
+.limparCarrinho:hover{
+  background-color: rgb(60, 3, 3);
+  border: solid rgb(75, 5, 5) 2px;
+}
+
+.limparCarrinho{
+  margin-left: 40px;
+  background-color: red;
+  border: solid rgb(75, 5, 5) 2px;
 }
