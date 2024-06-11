@@ -32,8 +32,8 @@ export function SobreNos() {
       <div className="equipe-section">
         <h2>Nossa Equipe</h2>
         <div className="membro 1">
+          <img src="../src/Images/Equipe.jpg/Alexandre.png" alt="Alexandre" />
           <p>Alexandre Carvalho Curzi</p>
-          <img src="../src/Images/Equipe.jpg/" alt="Alexandre" />
 
         </div>
         <div className="membro 2">
