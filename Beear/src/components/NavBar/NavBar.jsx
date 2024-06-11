@@ -68,7 +68,6 @@ function Navbar() {
                     <Botao title={'cópia não comédia'} onclick={mudarRotaHome} valor={'home'}/>
                     <Botao title={'cópia não comédia'} onclick={mudarRotaSobre} valor={'sobre'}/>
                     <Botao title={'cópia não comédia'} onclick={mudarRotaCarrinho} valor={'carrinho'}/>
-                    <Botao title={'cópia não comédia'} onclick={mudarRotaLogin} valor={'login'}/>
                     <Botao valor={verificarLogin()} subValor={verificarLogin2()} onclick={redirecionarRota}></Botao>
                     
                 </div>

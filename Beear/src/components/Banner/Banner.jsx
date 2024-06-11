@@ -27,7 +27,7 @@ export function Banner() {
     return (
         <>
         <div class= 'titlee'>
-            <h1>Bem-vindo à Beear Beer!</h1>
+            <h1 style={{color: "white"}}>Bem-vindo à Beear Beer!</h1>
             <br />
             <h3>Na Beear Beer, acreditamos que uma boa cerveja é muito mais do que uma bebida - é uma experiência que deve ser saboreada e compartilhada. Fundada por apaixonados por cerveja, nossa missão é criar rótulos únicos que encantem tanto os conhecedores quanto os curiosos.</h3>
             </div>

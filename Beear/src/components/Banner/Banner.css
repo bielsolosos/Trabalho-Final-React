@@ -95,7 +95,7 @@
     margin-top: 100px;
     width: 1200px;
     height: 40vh;
-    color: darkgoldenrod;
+    color: rgb(255, 255, 255);
 }
 .icon[for="c1"] {
     background-image: url("../../Images/Ipa.png");
