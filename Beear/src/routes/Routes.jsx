@@ -2,7 +2,7 @@ import { CarrinhoDeCompras } from "../pages/CarrinhoDeCompras/CarrinhoDeCompras"
 import { Route, Routes } from "react-router-dom";
 import { LoginCadastro } from "../pages/loginCadastro/LoginCadastro";
 import { PaginaPrincipal } from "../pages/PaginaPrincipal/PaginaPrincipal.jsx";
-import SobreNos from '../pages/Sobre/Sobre';
+import {SobreNos} from '../pages/Sobre/Sobre';
 
 export function Rotas() {
     // const user = obterPerfilUsuario();
