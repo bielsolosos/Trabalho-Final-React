@@ -33,25 +33,27 @@ export function SobreNos() {
         <h2>Nossa Equipe</h2>
         <div className="membro 1">
           <p>Alexandre Carvalho Curzi</p>
+          <img src="../src/Images/Equipe.jpg/" alt="Alexandre" />
+
         </div>
         <div className="membro 2">
-          <p>Bruno Queiroz Cariello</p>
           <img src="../src/Images/Equipe.jpg/Bruno.jpg" alt="Bruno" />
+          <p>Bruno Queiroz Cariello</p>
         </div>
         <div className="membro 3">
           {/*Eu juro que eu ia estilizar mas admito que perdi a vontade quando vi q fez um html + css normal componentizado...*/}
-          <p>Gabriel Da Rocha Santos coutinho</p>
           <img src="./src/Images/Equipe.jpg/Gabriel.png" alt="Gabriel" />
+          <p>Gabriel Da Rocha Santos coutinho</p>
         </div>
 
         <div className="membro 4">
-          <p>Eduardo de Almeida e Silva</p>
           <img src="./src/Images/Equipe.jpg/Eduardo.jpeg" alt="" />
+          <p>Eduardo de Almeida e Silva</p>
         </div>
 
         <div className="membro 5">
-          <p>Mateus Pereira Daltro</p>
           <img src="../src/Images/Equipe.jpg/Mateus.jpg" alt="" />
+          <p>Mateus Pereira Daltro</p>
         </div>
       </div>
     </div>

@@ -70,7 +70,7 @@
       align-items: center;
       justify-content: space-between;
       background-color: var(--secundary-color);
-      padding: 55px 0;
+      padding: 60px 0;
   }
   .text{
     color: var(--text-color-dark);

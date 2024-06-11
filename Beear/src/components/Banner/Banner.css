@@ -86,7 +86,8 @@
     justify-self: end;
 }
 
-.title{
+.titlee{
+    font-size: 30px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -94,7 +95,7 @@
     margin-top: 70px;
     width: 1200px;
     height: 40vh;
-    color:rgb(207, 153, 15);
+    color: darkgoldenrod;
 }
 .icon[for="c1"] {
     background-image: url("../../Images/Ipa.png");
