@@ -39,6 +39,7 @@ export function SobreNos() {
           <img src="../src/Images/Equipe.jpg/Bruno.jpg" alt="Bruno" />
         </div>
         <div className="membro 3">
+          {/*Eu juro que eu ia estilizar mas admito que perdi a vontade quando vi q fez um html + css normal componentizado...*/}
           <p>Gabriel Da Rocha Santos coutinho</p>
           <img src="./src/Images/Equipe.jpg/Gabriel.png" alt="Gabriel" />
         </div>
