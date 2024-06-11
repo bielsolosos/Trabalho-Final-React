@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getALLClientes } from '../../services/clientes';
+import { getALLClientes, criarCliente } from '../../services/clientes';
 import './LoginCadastro.css';
 
 export function LoginCadastro(){
@@ -14,8 +14,8 @@ export function LoginCadastro(){
     email: '',
     cpf: '',
     senha: '',
+    cep: '',
   });
-  const [cep, setCep] = useState('');
   const [mensagem, setMensagem] = useState('');
 
   const handleChange = (e) => {
@@ -47,7 +47,7 @@ export function LoginCadastro(){
     if (user) {
         alert('Login bem-sucedido!');
         localStorage.setItem('usuario', login)
-        window.location.reload();
+        getALLClientes();
 
     } 
     else {
@@ -58,17 +58,17 @@ export function LoginCadastro(){
 const tentaCriar = async (e) => {
   e.preventDefault();
   try {
-    const response = await criarCliente(cliente, cep);
-    setMensagem('Cliente criado com sucesso!');
+    const response = await criarCliente(cliente);
+    alert('Cliente criado com sucesso!');
     console.log('Resposta da API:', response);
+    window.location.reload();
   } catch (error) {
-    setMensagem('Erro ao criar cliente.');
+    console.log('Erro ao criar cliente.' + error);
   }
 };
 
   return (
     <>
-    Nav
     <main>
       <div className={`logcontainer ${!isLoginForm ? 'move' : ''}`} id="logcontainer">
         <div className="formcontainer">
@@ -99,9 +99,7 @@ const tentaCriar = async (e) => {
               <a href="#" id="open-register-mobile" onClick={toggleForm}>Registre-se</a>
             </p>
           </form>
-          <form className={`form form-register ${isLoginForm ? 'hidden' : ''}`} onSubmit={(event)=>{
-                event.preventDefault();
-            }} >
+          <form className={`form form-register ${isLoginForm ? 'hidden' : ''}`}>
             <h2 className="title">Criar Conta</h2>
             <p className="text">cadastre seu email</p>
             <div className="inputcontainer">
@@ -111,6 +109,7 @@ const tentaCriar = async (e) => {
         placeholder="Nome"
         value={cliente.nome}
         onChange={handleChange}
+        style={{backgroundColor: '#fab45a',color: 'white'}}
       />
       <input
         type="text"
@@ -118,6 +117,7 @@ const tentaCriar = async (e) => {
         placeholder="Telefone"
         value={cliente.telefone}
         onChange={handleChange}
+        style={{backgroundColor: '#fab45a',color: 'white'}}
       />
       <input
         type="email"
@@ -125,6 +125,7 @@ const tentaCriar = async (e) => {
         placeholder="Email"
         value={cliente.email}
         onChange={handleChange}
+        style={{backgroundColor: '#fab45a',color: 'white'}}
       />
       <input
         type="text"
@@ -132,6 +133,7 @@ const tentaCriar = async (e) => {
         placeholder="CPF"
         value={cliente.cpf}
         onChange={handleChange}
+        style={{backgroundColor: '#fab45a',color: 'white'}}
       />
       <input
         type="password"
@@ -139,16 +141,18 @@ const tentaCriar = async (e) => {
         placeholder="Senha"
         value={cliente.senha}
         onChange={handleChange}
+        style={{backgroundColor: '#fab45a',color: 'white'}}
       />
       <input
         type="text"
         name="cep"
         placeholder="CEP"
-        value={cep}
-        onChange={(e) => setCep(e.target.value)}
+        value={cliente.cep}
+        onChange={handleChange}
+        style={{backgroundColor: '#fab45a',color: 'white'}}
       />
             </div>
-            <button type="submit" className="button">Cadastrar</button>
+            <button type="submit" className="button" onClick={tentaCriar}>Cadastrar</button>
             {mensagem && <p>{mensagem}</p>}
             <p className="mobile-text">
               Já tem conta?

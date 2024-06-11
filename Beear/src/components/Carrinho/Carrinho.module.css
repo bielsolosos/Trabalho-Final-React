@@ -1,4 +1,6 @@
 .carrinhoContainer {
+  height: 100%;
+  overflow: auto;
   width: 80%;
   padding: 20px;
   border: 1px solid #ddd;
@@ -25,6 +27,7 @@
 }
 
 .carrinhoItem {
+  overflow: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;

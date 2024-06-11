@@ -6,10 +6,15 @@ export const getALLClientes= () => {
     return api.get(url);
 }
 
-export const criarCliente = async (cliente, cep) => {
+export const criarCliente = async (cliente) => {
     try {
-        const url = `/clientes/cadastrar/${cep}`
-      const response = api.post(url);
+        const url = `/clientes/cadastrar`
+      const response = api.post(url,cliente, {
+        headers: {
+          "Access-Control-Allow-Origin*": "",
+          Authorization: "Bearer + token",
+        },
+      });
       return response.data;
     } catch (error) {
       console.error('Erro ao criar cliente:', error);

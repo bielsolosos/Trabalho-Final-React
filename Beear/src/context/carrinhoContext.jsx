@@ -30,14 +30,13 @@ const CartProvider = ({children} ) => {
   const calcularValorTotal = () => {
     let total = 0;
     cartItens.forEach((item) => {
-      total += item.valorUnitario;
+      total += item.precoUnitario;
     });''
-    setValorTotal(total);
+    setValorTotal(total.toFixed(2));
   };
 
   useEffect(() => {
     calcularValorTotal();
-
   }, [cartItens]);
 
   return (

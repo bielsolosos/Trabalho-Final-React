@@ -15,6 +15,7 @@ export function CardProdutos({ nome, descricao, valor }) {
   const handleAddToCart = () => {
     adicionarItens(produto);
     console.log('aqui foi');
+    console.log(typeof(produto.precoUnitario))
   };
 
   return (

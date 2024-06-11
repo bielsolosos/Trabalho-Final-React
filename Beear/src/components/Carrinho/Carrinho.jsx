@@ -5,7 +5,8 @@ import {getAllCervas} from  '../../services/produtos';
 
 export function Carrinho() {
   const { cartItens, adicionarItens, removerItens, limparCarrinho, valorTotal } =
-    useContext(CartContext);
+  useContext(CartContext);
+  console.log(cartItens)
 
   return (
     <div className={styles.carrinhoContainer}>
@@ -19,7 +20,7 @@ export function Carrinho() {
               <div className={styles.itemDetalhes}>
                 <h2 className={styles.itemNome}>{item.nome}</h2>
                 <p className={styles.itemDescricao}>{item.descricao}</p>
-                <p className={styles.itemPreco}>Preço: R$ {item.valorUnitario}</p>
+                <p className={styles.itemPreco}>Preço: R$ {item.precoUnitario}</p>
               </div>
               <div className={styles.itemAcoes}>
               </div>
