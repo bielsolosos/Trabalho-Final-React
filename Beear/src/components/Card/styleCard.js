@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardProdutosEstyle = styled.div`
-  width: 200px;
+  width: 500px;
   padding: 20px;
   background-color: #fab45a;
   border: solid #f1a036 4px;

@@ -1,6 +1,5 @@
 .carrinhoContainer {
   width: 80%;
-  margin: auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -69,21 +68,11 @@
   cursor: pointer;
 }
 
-.botaoAdicionar {
-  background-color: #4caf50;
-  color: white;
-}
-
-.botaoRemover {
-  background-color: #f44336;
-  color: white;
-}
-
 .botaoLimpar {
   background-color: #ff9800;
   color: white;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 500px;
 }
 
 .carrinhoTotal {
