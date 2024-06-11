@@ -81,6 +81,10 @@
     cursor: pointer;
 }
 
+.card:hover{
+    background-color: rgb(230, 234, 238);
+    border: #333;
+}
 
 .add-to-cart-btn{
     justify-self: end;
