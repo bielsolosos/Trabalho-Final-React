@@ -3,6 +3,27 @@ import './Banner.css';
 
 export function Banner() {
 
+    const navegar = useNavigate();
+
+    const mudarRotaCarrinho = () =>{
+        let rota = '/carrinhodecompras'; // colocar a rota do carrinho
+        navegar(rota);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartBar = document.getElementById('cart-bar');
+        const cartCount = document.getElementById('cart-count');
+        const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    
+        let itemCount = 0;
+    
+        addToCartBtn.addEventListener('click', () => {
+            itemCount++;
+            cartCount.textContent = itemCount;
+            cartBar.classList.add('visible'); // Adiciona a classe 'visible' para exibir a barra do carrinho
+        });
+    });
+
     return (
         <>
         <div class= 'title'>
