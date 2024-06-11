@@ -43,7 +43,12 @@ export function SobreNos() {
           <p>Gabriel Da Rocha Santos coutinho</p>
           <img src="./src/Images/Equipe.jpg/Gabriel.png" alt="Gabriel" />
         </div>
-        <div className="membro 4"></div>
+
+        <div className="membro 4">
+          <p>Eduardo de Almeida e Silva</p>
+          <img src="./src/Images/Equipe.jpg/Eduardo.jpeg" alt="" />
+        </div>
+
         <div className="membro 5">
           <p>Mateus Pereira Daltro</p>
           <img src="../src/Images/Equipe.jpg/Mateus.jpg" alt="" />
