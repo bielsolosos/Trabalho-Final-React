@@ -5,7 +5,6 @@ import Navbar from '../../components/NavBar/NavBar';
  export function SobreNos(){
   return (
     <div className="sobreNos-container">
-      <Navbar />
       <p>
         Bem-vindo à nossa casa de cervejas artesanais, onde a tradição se funde com a inovação para criar experiências cervejeiras únicas.
       </p>
