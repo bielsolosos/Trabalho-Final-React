@@ -25,7 +25,7 @@ function Navbar() {
 
     //Para colocar o Logout e o Cadastre-se
     const verificarLogin2 = () => {
-        return usuario ? `Logout` : ' Clique para se cadastrar';
+        return usuario ? `Logout` : ' Cadastre-se';
     }
     
     const mudarRotaHome = () =>{
