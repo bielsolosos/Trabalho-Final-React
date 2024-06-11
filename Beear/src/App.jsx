@@ -9,12 +9,10 @@ function App() {
   const usuario = () => {localStorage('usuario','')};
 
   return (
-    <>
     <CartProvider>
     <Navbar />
     <Rotas />
     </CartProvider>
-    </>
   )
 }
 

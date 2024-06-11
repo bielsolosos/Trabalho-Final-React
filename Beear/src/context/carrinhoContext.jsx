@@ -2,22 +2,18 @@ import { useState, createContext, useEffect } from "react";
 
 const CartContext = createContext();
 
-const CartProvider = ( props ) => {
+const CartProvider = ({children} ) => {
   const [cartItens, setCartItens] = useState([]);
-  const [valorTotal, setValorTotal] = useState(0);
+  const [valorTotal, setValorTotal] = useState(0.0);
 
-  const adicionarItens = (produto) => {
-    setCartItens((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === produto.id);
-      if (existingItem) {
-        return prevItems.map((item) =>
-          item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item
-        );
-      } else {
-        return [...prevItems, { ...produto, quantidade: 1 }];
-      }
-    });
-  };
+  function adicionarItens(produto) {
+    // Garantir que valorUnitario é sempre um número
+    const produtoComValorNumerico = {
+      ...produto,
+      valorUnitario: parseFloat(produto.valorUnitario)
+    };
+    !cartItens.includes(produtoComValorNumerico) && setCartItens([...cartItens, produtoComValorNumerico]);
+  }
 
   const removerItens = (id) => {
     setCartItens((prevItems) =>
@@ -34,13 +30,14 @@ const CartProvider = ( props ) => {
   const calcularValorTotal = () => {
     let total = 0;
     cartItens.forEach((item) => {
-      total += item.quantidade * item.valorUnitario;
-    });
+      total += item.valorUnitario;
+    });''
     setValorTotal(total);
   };
 
   useEffect(() => {
     calcularValorTotal();
+
   }, [cartItens]);
 
   return (
@@ -53,7 +50,7 @@ const CartProvider = ( props ) => {
         valorTotal,
       }}
     >
-      {props}
+      {children}
     </CartContext.Provider>
   );
 };

@@ -7,8 +7,6 @@ export function Carrinho() {
   const { cartItens, adicionarItens, removerItens, limparCarrinho, valorTotal } =
     useContext(CartContext);
 
-  
-  
   return (
     <div className={styles.carrinhoContainer}>
       <h1 className={styles.carrinhoTitulo}>Carrinho</h1>
@@ -22,11 +20,8 @@ export function Carrinho() {
                 <h2 className={styles.itemNome}>{item.nome}</h2>
                 <p className={styles.itemDescricao}>{item.descricao}</p>
                 <p className={styles.itemPreco}>Preço: R$ {item.valorUnitario}</p>
-                
               </div>
               <div className={styles.itemAcoes}>
-                <button onClick={() => adicionarItens(item)} className={styles.botaoAdicionar}>+</button>
-                <button onClick={() => removerItens(item.id)} className={styles.botaoRemover}>-</button>
               </div>
             </div>
           ))

@@ -7,14 +7,14 @@ export function CardProdutos({ nome, descricao, valor }) {
   const { adicionarItens } = useContext(CartContext);
 
   const produto = { 
-    id: nome,
-    descricao,
-    valorUnitario: valor, 
+    nome : nome,
+    descricao : descricao,
+    precoUnitario: parseFloat(valor), 
   }
 
   const handleAddToCart = () => {
     adicionarItens(produto);
-    console.log('aqui foi')
+    console.log('aqui foi');
   };
 
   return (
@@ -22,7 +22,7 @@ export function CardProdutos({ nome, descricao, valor }) {
       <h2>{nome}</h2>
       <p>{descricao}</p>
       <p>{valor}</p>
-      <Botao onClick={handleAddToCart} valor={'Adicionar ao Carrinho'} />
+      <Botao onclick={handleAddToCart} valor={'Adicionar ao Carrinho'} />
     </CardProdutosEstyle>
   );
 }
