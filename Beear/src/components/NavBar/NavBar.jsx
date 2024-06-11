@@ -39,7 +39,7 @@ function Navbar() {
     }
     
     const mudarRotaSobre = () =>{
-        let rota = '/'; // colocar a rota do sobre
+        let rota = '/sobre'; // colocar a rota do sobre
         navegar(rota);
     }
     
